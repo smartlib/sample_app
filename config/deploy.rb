@@ -9,7 +9,7 @@ set :domain, '192.168.185.141'                  # 设置域名
 set :deploy_to, '/home/ruby/sample'               # 设置在服务器上部署的路径
 set :repository, 'git@github.com:smartlib/sample_app.git'   # 设置git版本库地址
 set :branch, 'master'                           # 确定代码的分支
-
+set :rvm_path, '/usr/local/rvm/bin/rvm'
 # 在以下路径手动创建指定文件，这些文件将被链接到'deploy: link_shared_paths'步骤
 set :shared_paths, ['config/database.yml', 'log']
 
@@ -23,7 +23,7 @@ task :environment do
   # invoke :'rbenv:load'
 
   # 如果使用rvm，可以加载一个rvm version@gemset来配置你的项目环境
-  invoke :'rvm:use[ruby-2.0.0-p353@rails4]'
+  invoke :'rvm:use[ruby-2.0.0-p353@rails402]'
 end
 
 # 运行 mina setup 时将执行以下操作
