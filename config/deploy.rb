@@ -5,7 +5,7 @@ require 'mina/git'
 require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 # 基本设置
-set :domain, '192.168.185.141'                  # 设置域名
+set :domain, '192.168.185.143'                  # 设置域名
 set :deploy_to, '/home/ruby/sample'               # 设置在服务器上部署的路径
 set :repository, 'git@github.com:smartlib/sample_app.git'   # 设置git版本库地址
 set :branch, 'master'                           # 确定代码的分支
