@@ -9,7 +9,7 @@ rails_env = ENV["RAILS_ENV"] || "production"
 
 preload_app true
 working_directory Rails.root
-pid "#{Rails.root}/tmp/pids/unicorn_padrino.pid"
+pid "#{Rails.root}/tmp/unicorn_padrino.pid"
 stderr_path "#{Rails.root}/log/unicornerr.log"
 stdout_path "#{Rails.root}/log/unicornout.log"
 
@@ -24,7 +24,7 @@ if GC.respond_to?(:copy_on_write_friendly=)
 end
 
 before_fork do |server, worker|
-  old_pid = "#{Rails.root}/tmp/pids/unicorn_padrino.pid.oldbin"
+  old_pid = "#{Rails.root}/tmp/unicorn_padrino.pid.oldbin"
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
